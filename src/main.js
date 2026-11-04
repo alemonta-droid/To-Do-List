@@ -71,8 +71,8 @@ form.addEventListener('submit', (e) => {
 })
 
 
-/* ==================== Es 1 ==================== */
-// Quattro task di partenza: il quarto è quello dell'esercizio.
+//es 1
+
 const TASK_INIZIALI = [
   { id: 1, title: 'Studiare per la verifica', completed: false },
   { id: 2, title: 'Comprare il pane', completed: true },
@@ -81,8 +81,8 @@ const TASK_INIZIALI = [
 ]
 
 
-/* ==================== Es 2 ==================== */
-// Totali, completati e da fare: tutti ricavati dallo stato.
+//es2
+
 function renderInfo() {
   const totali = tasks.length
   const completati = tasks.filter(t => t.completed).length
@@ -93,19 +93,15 @@ function renderInfo() {
 }
 
 
-/* ==================== Es 3 ====================
-   Prova del task fantasma. Non fa parte dell'app.
-   Per provarla incolla queste tre righe IN FONDO al file,
-   dopo render(). Guarda lista e contatore, poi cancellale.
+//es3
 
-const intruso = document.createElement('li')
-intruso.textContent = 'Task fantasma'
-lista.appendChild(intruso)
-*/
+//const intruso = document.createElement('li')
+//intruso.textContent = 'Task fantasma'
+//lista.appendChild(intruso)
 
 
-/* ==================== Es 4 ==================== */
-// Il salvataggio avviene in un solo posto.
+
+//es4
 function salvaStato() {
   localStorage.setItem(CHIAVE, JSON.stringify(tasks))
 }
@@ -117,8 +113,8 @@ function aggiornaStato(nuoviTasks) {
 }
 
 
-/* ==================== Es 5 ==================== */
-// Se i dati salvati non sono JSON valido, si riparte con lista vuota.
+//es5
+
 function caricaStato() {
   const testo = localStorage.getItem(CHIAVE)
   if (testo === null) return TASK_INIZIALI
@@ -132,12 +128,7 @@ function caricaStato() {
 }
 
 
-/* ==================== Es 6 ==================== */
-// Carta e penna: non serve codice.
-
-
-/* ==================== Es 7 ==================== */
-// Chiede il nome alla prima apertura, poi mostra "Bentornato".
+//es7
 function renderBenvenuto() {
   const nome = localStorage.getItem(CHIAVE_NOME)
   benvenuto.innerHTML = ''
@@ -166,8 +157,7 @@ function renderBenvenuto() {
 }
 
 
-/* ==================== Es 8 ==================== */
-// Frase che cambia in base alla situazione.
+//es8
 function renderMessaggio() {
   const totali = tasks.length
   const restanti = tasks.filter(t => !t.completed).length
@@ -182,8 +172,7 @@ function renderMessaggio() {
 }
 
 
-/* ==================== Es 9 ==================== */
-// Elimina tutti i completati, con conferma.
+//es9
 function deleteCompletati() {
   if (!confirm('Elimino tutti i task completati?')) return
   aggiornaStato(tasks.filter(t => !t.completed))
@@ -203,7 +192,6 @@ function renderAzioni() {
 }
 
 
-/* ==================== AVVIO ==================== */
 tasks = caricaStato()
 renderBenvenuto()
 render()
