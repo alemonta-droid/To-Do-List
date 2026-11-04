@@ -1,0 +1,28 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.fatto {
+  text-decoration: line-through;
+  color: #999;
+}
